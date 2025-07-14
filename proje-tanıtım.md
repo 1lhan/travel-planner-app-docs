@@ -1,3 +1,4 @@
+```
 🧭 Proje Amacı
 
 Bu proje, kullanıcıların kişiselleştirilmiş seyahat planları oluşturmasını ve bu planlara uygun kampanyalardan faydalanmasını sağlayan, yapay zeka destekli bir seyahat planlama platformudur. Sistem; kullanıcının ilgi alanları, bütçesi, konaklama tercihleri ve tarih aralığı gibi bilgileri değerlendirerek ona özel dinamik öneriler, kampanya eşleştirmeleri ve destinasyon tavsiyeleri sunar. Böylece kullanıcılar daha uygun fiyatlı, hedeflerine ve zevklerine daha uygun tatiller planlayabilir.
@@ -60,3 +61,4 @@ Kişiselleştirme: İlgi alanlarına, bütçeye ve konaklama tercihlerine göre 
 Yapay Zeka Destekli Öneriler: Akıllı kampanya ve rota önerileri
 Kampanya Takibi ve Katılım: Hem kullanıcılar hem işletmeler için etkili bir yönetim
 Cashback Mekanizması: Katılımı teşvik eden ödüllendirme sistemi sunarak yenilikçi bir deneyim sağlar.
+```
