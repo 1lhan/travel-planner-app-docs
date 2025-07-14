@@ -1,3 +1,4 @@
+```prisma
 model User {
   id             String   @id @default(cuid())
   fullName       String
@@ -210,3 +211,4 @@ enum CoinSource {
   INVITE_FRIEND           // Arkadaş daveti gibi sosyal aksiyonlar
   BONUS                   // Özel kampanya / hediye coini
 }
+```
