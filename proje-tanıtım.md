@@ -1,3 +1,4 @@
+```
 🗺️ Seyahat Planlama Modülü
 
 🎯 Amaç
@@ -39,3 +40,4 @@ Planlar diğer kullanıcılarla paylaşılabilir ve yapay zeka desteğiyle süre
     • Plan isPublic olarak işaretlenirse toplulukla paylaşılır. (default=private)
     • Her kullanıcı "Hesabım" sayfasında kendi planlarını listeleyebilir, düzenleyebilir, silebilir.
     • Influencer kullanıcılar sharedByInfluencer = true ile özel içerikler üretebilir.
+```
