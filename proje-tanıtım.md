@@ -55,7 +55,7 @@ Planlar diğer kullanıcılarla paylaşılabilir ve yapay zeka desteğiyle süre
 
 🎯 Amaç
 
-Yorum Modülü, kullanıcıların deneyimledikleri seyahat planlarını, konaklama yerlerini ve mekanları puanlayarak değerlendirmelerine olanak tanır.
+Değerlendirme Modülü, kullanıcıların deneyimledikleri seyahat planlarını, konaklama yerlerini ve mekanları puanlayarak değerlendirmelerine olanak tanır.
 Bu sayede sistemdeki içerikler topluluk katkısıyla sürekli zenginleşir, öneriler daha güvenilir ve kişiselleştirilebilir hâle gelir.
 
 👤 Kullanıcıdan Alınan Girdiler

@@ -22,7 +22,7 @@ model TravelPlan {
 }
 
 
-"travelSteps": [
+[
   {
     "country": "İtalya",
     "city": "Roma",
@@ -31,7 +31,8 @@ model TravelPlan {
     "departureDate": "2025-08-04",
     "transport": "Plane",
     "travelDurationMinutes": 120,
-    "travelCost": 150.0
+    "travelCost": 150.0,
+    "accommodationType": "Hotel"
   },
   {
     "country": "Fransa",
@@ -41,9 +42,11 @@ model TravelPlan {
     "departureDate": "2025-08-09",
     "transport": "Train",
     "travelDurationMinutes": 240,
-    "travelCost": 80.0
+    "travelCost": 80.0,
+    "accommodationType": "Hostel"
   }
 ]
+
 
 "recommendations": {
   "places": [
@@ -54,6 +57,23 @@ model TravelPlan {
     { "id": "event1", "name": "Rock Festivali", "type": "concert", "date": "2025-08-12" },
     { "id": "event2", "name": "Yaz Karnavalı", "type": "festival", "date": "2025-08-14" }
   ]
+}
+
+
+model Review {
+  id         String   @id @default(cuid())
+
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+
+  targetId   String   // TravelPlan, Place veya AccommodationPlace'ın ID'si
+  targetType String   // "travel_plan" | "place" | "accommodation"
+
+  rating     Int
+  comment    String?
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
 
 ```
