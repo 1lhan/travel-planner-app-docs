@@ -1,5 +1,4 @@
 ```
-
 model TravelPlan {
   id                 String     @id @default(cuid())
   userId             String
@@ -10,18 +9,18 @@ model TravelPlan {
   minBudget          Float?
   maxBudget          Float?
 
-  travelSteps        Json       // Her adım: lokasyon, tarih, ulaşım, süre ve fiyat içerir
+  travelSteps        Json       // Her adım: lokasyon, tarih, ulaşım, süre, maliyet ve konaklama tercihi içerir
 
   interests          Interest[]
-  accommodationType  Accommodation
 
   appliedCampaigns   Campaign[] @relation("AppliedCampaigns")
-  recommendations    Json
+  recommendations    Json       // Place ve etkinlik önerileri (ör: places[], events[])
   reviews            Review[]   @relation("TravelPlanReviews")
 
   createdAt          DateTime   @default(now())
   updatedAt          DateTime   @updatedAt
 }
+
 
 "travelSteps": [
   {

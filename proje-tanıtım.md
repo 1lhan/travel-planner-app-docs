@@ -55,8 +55,17 @@ Planlar diğer kullanıcılarla paylaşılabilir ve yapay zeka desteğiyle süre
 
 🎯 Amaç
 
-Değerlendirme Modülü, kullanıcıların seyahat deneyimlerini farklı varlıklar (seyahat planı, ziyaret edilen yerler, konaklama tesisleri vb.) özelinde puanlayıp yorumlayabilmelerini sağlar.
-Sistem, kullanıcı geri bildirimlerine dayanarak içerikleri sıralayabilir, öneri sistemini güçlendirebilir ve topluluk katkısını öne çıkarır.
+Yorum Modülü, kullanıcıların deneyimledikleri seyahat planlarını, konaklama yerlerini ve mekanları puanlayarak değerlendirmelerine olanak tanır.
+Bu sayede sistemdeki içerikler topluluk katkısıyla sürekli zenginleşir, öneriler daha güvenilir ve kişiselleştirilebilir hâle gelir.
+
+👤 Kullanıcıdan Alınan Girdiler
+
+• Hedef Varlık (sadece biri):
+    • Seyahat Planı (TravelPlan)
+    • Yer/Mekan (Place)
+    • Konaklama Yeri (AccommodationPlace)
+• Puan: 1–5 arası tam sayı (rating)
+• Yorum (opsiyonel): Kullanıcının serbest metinle bıraktığı açıklama (comment)
 
 
 ```
