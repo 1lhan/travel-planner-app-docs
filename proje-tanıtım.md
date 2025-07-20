@@ -27,7 +27,7 @@ Planlar diğer kullanıcılarla paylaşılabilir ve yapay zeka desteğiyle süre
 2. Yapay Zeka Destekli Öneriler
     • İlgi alanı, bütçe (opsiyonel), gidilecek yer, tarih aralığı ve konaklama tercihine (opsiyonel) göre
     konaklama (AccommodationPlace modeli üzerinden) seçenekleri sunulur.
-    • Bütçe (opsiyonel), tarih aralığI ve gidilecek yere göre gidiş ve dönüş için ulaşım seçenekleri sunulur.
+    • Bütçe (opsiyonel), tarih aralığı, gidilecek yer ve ulaşım tercihine (opsiyonel) göre gidiş ve dönüş için ulaşım seçenekleri sunulur.
     • İlgi alanı, bütçe (opsiyonel), gidilecek yer ve tarih aralığına göre yer önerileri sunulur (Place modeli üzerinden).
     • İlgi alanı, bütçe (opsiyonel), gidilecek yer ve tarih aralığına göre etkinlikler sunulur.
     • Yer, konaklama ve varsa etkinlik listelerinde öncelikli olarak kampanyalı seçenekler sunulur.
@@ -43,7 +43,7 @@ Planlar diğer kullanıcılarla paylaşılabilir ve yapay zeka desteğiyle süre
 
 5. Aktivite Takvimi
     • Kullanıcı önerilen veya kendi eklediği yerleri günlük takvime yerleştirerek seyahatini planlar.
-    
+
 6. Paylaşım ve Yönetim
     • Plan isPublic olarak işaretlenirse toplulukla paylaşılır. (default=private)
     • Her kullanıcı "Hesabım" sayfasında kendi planlarını listeleyebilir, düzenleyebilir, silebilir.
