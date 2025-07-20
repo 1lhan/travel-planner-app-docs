@@ -9,37 +9,38 @@ Planlar diğer kullanıcılarla paylaşılabilir ve yapay zeka desteğiyle süre
 
 👤 Kullanıcıdan Alınan Girdiler
 
-• Tarih Aralığı: Gidiş ve dönüş tarihleri (departureDate, returnDate)
 • Bütçe Limiti (opsiyonel): Minimum ve maksimum bütçe (minBudget, maxBudget)
-• Ulaşım Tercihleri (opsiyonel): Uçak, otobüs, tren, özel araç, karavan
-• Konaklama Tercihi (opsiyonel): Otel, hostel, Airbnb, kamp alanı, karavan parkı vb.
 • İlgi Alanları: Tarih, doğa, gurme, müze, alışveriş, gece hayatı vb. kategoriler
-• Lokasyon:
-    • departureLocation: Seyahatin başladığı şehir
-    • arrivalLocation: Gidilmek istenen şehir
+• Seyahat Adımları:
+    • Ülke, şehir veya ilçe bilgisi
+    • Lokasyonda kalış süresi
+    • Ulaşım tipi (opsiyonel): Uçak, otobüs, tren, özel araç, karavan vb.
+    • Konaklama tipi (opsiyonel): Otel, hostel, Airbnb, kamp alanı, karavan parkı vb.
 
 🧠 Modül İşleyişi
 
 1. Plan Oluşturma
-    • Kullanıcı yukarıdaki girdileri verir
-    • Sistem bu bilgiler doğrultusunda ulaşım, konaklama, gezilecek yer (Place) ve etkinlik alternatiflerini listeler.
+    • Kullanıcı isterse minimum ve maksimum bütçe belirler.
+    • İlgi alanları arasından tercihlerini seçer.
+    • Gideceği her lokasyon için kalış süresi, ulaşım tipi (opsiyonel) ve konaklama tipi (opsiyonel) bilgilerini girer.
+    • Sistem, bu veriler doğrultusunda ulaşım, konaklama, gezilecek yerler (Place), kampanyalar ve etkinlik seçeneklerini listeler.
 
 2. Yapay Zeka Destekli Öneriler
-    • İlgi alanı, bütçe (opsiyonel), gidilecek yer, tarih aralığı ve konaklama tercihine (opsiyonel) göre
-    konaklama (AccommodationPlace modeli üzerinden) seçenekleri sunulur.
-    • Bütçe (opsiyonel), tarih aralığı, gidilecek yer ve ulaşım tercihine (opsiyonel) göre gidiş ve dönüş için ulaşım seçenekleri sunulur.
-    • İlgi alanı, bütçe (opsiyonel), gidilecek yer ve tarih aralığına göre yer önerileri sunulur (Place modeli üzerinden).
-    • İlgi alanı, bütçe (opsiyonel), gidilecek yer ve tarih aralığına göre etkinlikler sunulur.
-    • Yer, konaklama ve varsa etkinlik listelerinde öncelikli olarak kampanyalı seçenekler sunulur.
+    • İlgi alanları, bütçe (opsiyonel), gidilecek lokasyonlar, tarih aralığı ve konaklama tercihlerine göre (AccommodationPlace modeli üzerinden) konaklama seçenekleri sunulur.
+    • Bütçe (opsiyonel), tarih aralığı, gidilecek lokasyonlar, konaklama tercihi ve ulaşım tercihlerine göre;
+        • Gidiş ve dönüş için ulaşım seçenekleri sunulur.
+        • Örneğin, iki lokasyon varsa; seyahatin başladığı yerden 1. lokasyona, 1. lokasyondan 2. lokasyona ve 2. lokasyondan başlangıç noktasına dönüş için ulaşım alternatifleri önerilir.
+        • Aynı zamanda, her tarih aralığı için uygun konaklama seçenekleri de kullanıcıya sunulur.
+    • İlgi alanı, bütçe (opsiyonel), gidilecek lokasyonlar ve tarih aralığına göre yer önerileri (Place modeli üzerinden) ve etkinlikler sunulur.
+    • Yer, konaklama ve etkinlik listelerinde kampanyalı seçenekler öncelikli olarak gösterilir.
     • Cashback içeren kampanyalar özel olarak etiketlenir.
-    • Kampanya dışı sonuçlar; popülerlik, değerlendirme puanı ve fiyat gibi kriterlere göre sıralanabilir.
+    • Kampanya dışı sonuçlar popülerlik, değerlendirme puanı ve fiyat gibi kriterlere göre sıralanabilir.
 
-3. Manel Yer Ekleme
+3. Manuel Yer Ekleme
     • Kullanıcı dilerse sistemde bulunmayan özel bir yeri plana manuel olarak ekleyebilir.
     
 4. Özellikler
-    • Yerler, konaklama ve ulaşım seçeneklerine sıralama işlemi (fiyat, en çok tercih edilen, google değerlendirme puanı)
-    uygulanabilecek.
+    • Yerler, konaklama ve ulaşım seçeneklerine sıralama işlemi (fiyat, en çok tercih edilen, google değerlendirme puanı) uygulanabilecek.
 
 5. Aktivite Takvimi
     • Kullanıcı önerilen veya kendi eklediği yerleri günlük takvime yerleştirerek seyahatini planlar.
@@ -48,4 +49,14 @@ Planlar diğer kullanıcılarla paylaşılabilir ve yapay zeka desteğiyle süre
     • Plan isPublic olarak işaretlenirse toplulukla paylaşılır. (default=private)
     • Her kullanıcı "Hesabım" sayfasında kendi planlarını listeleyebilir, düzenleyebilir, silebilir.
     • Influencer kullanıcılar sharedByInfluencer = true ile özel içerikler üretebilir.
+
+
+📝 Değerlendirme (Review) Modülü
+
+🎯 Amaç
+
+Değerlendirme Modülü, kullanıcıların seyahat deneyimlerini farklı varlıklar (seyahat planı, ziyaret edilen yerler, konaklama tesisleri vb.) özelinde puanlayıp yorumlayabilmelerini sağlar.
+Sistem, kullanıcı geri bildirimlerine dayanarak içerikleri sıralayabilir, öneri sistemini güçlendirebilir ve topluluk katkısını öne çıkarır.
+
+
 ```
