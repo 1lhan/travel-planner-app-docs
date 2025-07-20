@@ -1,90 +1,41 @@
-```
-🧭 Proje Amacı
-
-Bu proje, kullanıcıların kişiselleştirilmiş seyahat planları oluşturmasını ve bu planlara uygun kampanyalardan faydalanmasını sağlayan, yapay zeka destekli bir seyahat planlama platformudur. Sistem; kullanıcının ilgi alanları, bütçesi, konaklama tercihleri ve tarih aralığı gibi bilgileri değerlendirerek ona özel dinamik öneriler, kampanya eşleştirmeleri ve destinasyon tavsiyeleri sunar. Böylece kullanıcılar daha uygun fiyatlı, hedeflerine ve zevklerine daha uygun tatiller planlayabilir.
-
-
 🗺️ Seyahat Planlama Modülü
 
-Kullanıcılar bu modül aracılığıyla detaylı seyahat planları oluşturabilir. Her seyahat planı aşağıdaki kriterlere göre şekillendirilir:
+🎯 Amaç
+Seyahat Planlama Modülü, kullanıcıların kendi tercihlerine göre özelleştirilmiş seyahat planları oluşturmasını sağlar.
+Sistem, kullanıcıdan alınan temel girdilere dayanarak akıllı öneriler üretir ve bu plana uygun kampanyaları eşleştirir.
+Planlar diğer kullanıcılarla paylaşılabilir ve yapay zeka desteğiyle sürekli geliştirilebilir.
 
-• Tarih aralığı (gidiş – dönüş)
-• Bütçe limiti (minimum ve maksimum)
-• Ulaşım türü (otobüs, uçak, tren, karavan, araç)
-• Konaklama tercihi (otel, hostel, Airbnb, kamp, karavan vb.)
-• İlgi alanları (tarih, doğa, yemek, müze, alışveriş vb.)
+👤 Kullanıcıdan Alınan Girdiler
+• Tarih Aralığı: Gidiş ve dönüş tarihleri (departureDate, returnDate)
+• Bütçe Limiti (opsiyonel): Minimum ve maksimum bütçe (minBudget, maxBudget)
+• Ulaşım Tercihleri (opsiyonel): Uçak, otobüs, tren, özel araç, karavan
+• Konaklama Tercihi (opsiyonel): Otel, hostel, Airbnb, kamp alanı, karavan parkı vb.
+• İlgi Alanları: Tarih, doğa, gurme, müze, alışveriş, gece hayatı vb. kategoriler
+• Lokasyon:
+    • departureLocation: Seyahatin başladığı şehir
+    • arrivalLocation: Gidilmek istenen şehir
 
-Sistem, bu verileri analiz ederek hem kullanıcıya uygun kampanyaları önermekte, hem de yapay zeka desteğiyle özel etkinlik ve destinasyon önerileri sunmaktadır. Oluşturulan planlar isteğe bağlı olarak diğer kullanıcılarla da paylaşılabilir. Her kullanıcı kendi planlarını "Hesabım" sayfasında takip edebilir, düzenleyebilir veya silebilir.
-
-
-🎁 Kampanya Modülü
-
-Kampanyalar, kullanıcıların oluşturduğu seyahat planlarına uygun olarak sistem tarafından önerilir ve ayrıca uygulama içinde "Kampanyalar" sayfasında listelenir. Bu kampanyalar:
-Yöneticiler (admin) veya iş ortakları (ör. oteller, ulaşım şirketleri, tur firmaları) tarafından oluşturulabilir.
-
-Her kampanya; başlık, açıklama, kategori (örneğin konaklama, ulaşım, etkinlik), konum bilgisi (şehir/ilçe), tarih aralığı, kişi limiti, indirimli fiyat ve orijinal fiyat gibi bilgiler içerir.
-
-Kampanyalar ayrıca:
-• Katılım sayısına göre analiz edilebilir.
-• Görüntülenme istatistikleri takip edilebilir.
-• Şirket hesabı olan kullanıcılar kampanyaları "Hesabım" sayfasından yönetebilir.
-
-
-💸 Cashback Özelliği
-
-Bazı kampanyalarda cashback (geri ödeme) özelliği bulunur. Bu özellik sayesinde:
-Kullanıcılar katıldıkları kampanyadan belirli bir oranda (ör. %5) nakit iadesi kazanır.
-Kazanılan cashback miktarı, kullanıcının hesabında birikir.
-
-Kullanıcılar "Cashbacklerim" sayfasından:
-• Kazandıkları miktarları
-• Ne zaman ne kadar harcadıklarını
-• Hangi kampanyalardan kazandıklarını
-• Cashback durumlarını (bekliyor, onaylandı) takip edebilir.
-• Cashback özelliği, kullanıcıların platforma olan bağlılığını ve kampanyalara katılım isteğini artırmayı hedefler.
-
-🪙 Coin Sistemi
-
-Platformda kullanıcıların çeşitli etkileşimleri sonucunda coin kazanabilecekleri bir ödül sistemi bulunmaktadır. Bu sistem, kullanıcıların aktifliğini artırmayı ve görev tabanlı etkileşimleri teşvik etmeyi hedefler.
-Coin Kazanma Yöntemleri:
-• Kullanıcılar aşağıdaki yollarla coin kazanabilir:
-• Görev tamamlama (ör. anket doldurma, seyahat planı oluşturma, yorum yazma)
-• Kampanyaya katılım
-• Belirli hizmet veya ürünlerin satın alınması
-• Arkadaş daveti gibi sosyal aksiyonlar
-• Özel promosyon veya bonus etkinlikler
-• Her coin kaydı, kullanıcının profiline bağlanır ve kazanç nedeni CoinSource enum alanında tutulur.
-
-Coin Bilgileri: Kullanıcının toplam coin bakiyesi User.totalCoin alanında güncel olarak tutulur.
-Tüm kazanımlar ve coin geçmişi kullanıcıya "Hesabım" sayfasında gösterilir.
-
-
-🎁 Coin Ürünleri
-
-Kullanıcılar kazandıkları coin'leri özel ürün veya hizmetleri satın almak için kullanabilir. Coin ile alınabilecek bu içerikler, platformda ayrı bir "Coin Ürünleri" sekmesinde listelenir.
-Coin Ürünlerinin Özellikleri: Her ürün, başlık, açıklama, görsel, coin fiyatı ve stok bilgisiyle tanımlanır.
-• Yalnızca coin ile satın alınabilir; TL ile ödeme yapılmaz.
-• Ürün stokları sistem tarafından takip edilir ve tükenen ürünler otomatik olarak pasifleştirilir.
-• Satın Alma İşlemi: Kullanıcının CoinPurchase modeli üzerinden yaptığı her satın alma kaydedilir.
-• Satın alma işlemi gerçekleştiğinde: Harcanan coin miktarı, User.totalCoin alanından düşülür.
-• CoinPurchase modeli üzerinden işlem tarihi, ürün ID’si ve kullanıcı ID’si ile kayıt tutulur.
-
-
-🌿 Organik Tarım Bölümü
-
-Projemizin Organik Tarım Bölümü, doğaya ve sağlığa duyarlı bireyler için sürdürülebilir ve temiz tarım yöntemlerini teşvik etmeyi amaçlar.
-
-Bu bölümde;
-• Yerel üreticilerle iş birliği yapılarak taze ve güvenilir organik ürünlerin temini sağlanır.
-• Kullanıcılar, organik tarım ürünlerini kolayca keşfedebilir, satın alabilir ve bu alanda gelişen kampanyalardan faydalanabilir.
-• Aynı zamanda, sürdürülebilir yaşam ve çevre dostu tarım uygulamaları hakkında farkındalık yaratılır.
-
-
-✨ Özetle
-
-Bu proje, klasik seyahat planlama uygulamalarından farklı olarak:
-Kişiselleştirme: İlgi alanlarına, bütçeye ve konaklama tercihlerine göre öneri
-Yapay Zeka Destekli Öneriler: Akıllı kampanya ve rota önerileri
-Kampanya Takibi ve Katılım: Hem kullanıcılar hem işletmeler için etkili bir yönetim
-Cashback Mekanizması: Katılımı teşvik eden ödüllendirme sistemi sunarak yenilikçi bir deneyim sağlar.
-```
+🧠 Modül İşleyişi
+1. Plan Oluşturma
+    • Kullanıcı yukarıdaki girdileri verir
+    • Sistem bu bilgiler doğrultusunda ulaşım, konaklama, gezilecek yer (Place) ve etkinlik alternatiflerini listeler.
+2. Yapay Zeka Destekli Öneriler
+    • İlgi alanı, bütçe (opsiyonel), gidilecek yer, tarih aralığı ve konaklama tercihine (opsiyonel) göre
+    konaklama (AccommodationPlace modeli üzerinden) seçenekleri sunulur.
+    • Bütçe (opsiyonel), tarih aralığI ve gidilecek yere göre gidiş ve dönüş için ulaşım seçenekleri sunulur.
+    • İlgi alanı, bütçe (opsiyonel), gidilecek yer ve tarih aralığına göre yer önerileri sunulur (Place modeli üzerinden).
+    • İlgi alanı, bütçe (opsiyonel), gidilecek yer ve tarih aralığına göre etkinlikler sunulur.
+    • Yer, konaklama ve varsa etkinlik listelerinde öncelikli olarak kampanyalı seçenekler sunulur.
+    • Cashback içeren kampanyalar özel olarak etiketlenir.
+    • Kampanya dışı sonuçlar; popülerlik, değerlendirme puanı ve fiyat gibi kriterlere göre sıralanabilir.
+3. Manel Yer Ekleme
+    • Kullanıcı dilerse sistemde bulunmayan özel bir yeri plana manuel olarak ekleyebilir.
+4. Özellikler
+    • Yerler, konaklama ve ulaşım seçeneklerine sıralama işlemi (fiyat, en çok tercih edilen, google değerlendirme puanı)
+    uygulanabilecek.
+5. Aktivite Takvimi
+    • Kullanıcı önerilen veya kendi eklediği yerleri günlük takvime yerleştirerek seyahatini planlar.
+6. Paylaşım ve Yönetim
+    • Plan isPublic olarak işaretlenirse toplulukla paylaşılır. (default=private)
+    • Her kullanıcı "Hesabım" sayfasında kendi planlarını listeleyebilir, düzenleyebilir, silebilir.
+    • Influencer kullanıcılar sharedByInfluencer = true ile özel içerikler üretebilir.
