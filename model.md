@@ -181,12 +181,17 @@ model CampaignParticipation {
   
   affiliatedById String?    // Katılım influencer linkinden geldiyse o influencer userId'si
   affiliatedBy   User?      @relation("InfluencerCampaignParticipations", fields: [affiliatedById], references: [id])
+
+  travelPlanId   String?    // Bu kampanya kullanımı hangi seyahat planı ile ilişkiliyse
+  travelPlan     TravelPlan? @relation(fields: [travelPlanId], references: [id])
   
   participatedAt DateTime   @default(now())
   
   status         ParticipationStatus @default(Pending)  // Katılım durumu
    
   cashbackEarned Float?    // Bu katılımdan kazanılan cashback miktarı
+
+  participantsCount Int?   // Kampanyadan yararlanan kişi sayısı (örneğin grup seyahati)
 }
 
 enum ParticipationStatus {
@@ -204,6 +209,8 @@ model TravelPlan {
 
   title              String
   isPublic           Boolean    @default(false)
+  sharedByInfluencer Boolean    @default(false)
+
   minBudget          Float?
   maxBudget          Float?
 
@@ -212,7 +219,15 @@ model TravelPlan {
   interests          Category[]
 
   appliedCampaigns   Campaign[] @relation("AppliedCampaigns")
-  recommendations    Json       // Place ve etkinlik önerileri (ör: places[], events[])
+
+  placeSelections    Json       // Kullanıcının seçtiği gezilecek yerler (Place model referansları)
+
+  eventSelections    Json       // Kullanıcının seçtiği etkinlikler (Event model referansları)
+
+  manualPlaces       Json?      // Kullanıcının manuel eklediği, sistemde olmayan özel yerler
+
+  activityCalendar   Json?      // Günlük takvim bilgileri, her lokasyon için ayrı ayrı olabilir
+
   reviews            Review[]
 
   createdAt          DateTime   @default(now())
