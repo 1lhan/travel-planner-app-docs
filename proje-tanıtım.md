@@ -69,7 +69,7 @@
         • Kullanıcı, Place modelinden alınan gezilecek yerler arasında bir yerden diğerine gidiş için sunulan ulaşım seçeneklerini,
         tek bir buton aracılığıyla Google Maps üzerinde görüntüleyebilir ve detaylı rota bilgisi alabilir.
 
-    6. Paylaşım ve Yönetim
+    5. Paylaşım ve Yönetim
         • Plan isPublic olarak işaretlenirse toplulukla paylaşılır (varsayılan = gizli).
         • Kullanıcılar "Hesabım" sayfasından kendi planlarını listeleyebilir, düzenleyebilir veya silebilir.
         • Influencer kullanıcılar, sharedByInfluencer = true etiketiyle özel içerikler paylaşabilir.
