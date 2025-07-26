@@ -1,3 +1,4 @@
+```
 👤 User (Kullanıcı) Modülü
 
 🎯 Amaç
@@ -153,3 +154,4 @@ model UserRoleApplication {
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt
 }
+```

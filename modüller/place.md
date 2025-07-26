@@ -1,3 +1,4 @@
+```
 📍 Place (Mekan) Modülü
 
 🎯 Amaç
@@ -66,3 +67,4 @@ model Place {
   createdAt       DateTime @default(now())       // Oluşturulma zamanı
   updatedAt       DateTime @updatedAt            // Son güncelleme zamanı
 }
+```

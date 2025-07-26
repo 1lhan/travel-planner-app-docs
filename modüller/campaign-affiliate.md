@@ -1,3 +1,4 @@
+```
 📢 Kampanya Reklam ve İşbirliği Modülü
 
 🎯 Amaç
@@ -95,3 +96,4 @@ model CollaborationRequest {
   createdAt      DateTime @default(now())
   respondedAt    DateTime?
 }
+```

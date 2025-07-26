@@ -1,3 +1,4 @@
+```
 🎁 Kampanya (Campaign) Modülü
 
 🎯 Amaç
@@ -126,3 +127,4 @@ model CampaignParticipation {
 
   participantsCount Int?          // Grup katılımı için katılımcı sayısı (opsiyonel)
 }
+```

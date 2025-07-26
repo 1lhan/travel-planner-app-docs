@@ -1,3 +1,4 @@
+```
 🗺️ Seyahat Planı (Travel Plan) Modülü
 
 🎯 Amaç
@@ -168,3 +169,4 @@ model TravelPlanPurchase {
   purchasedAt    DateTime @default(now())
   paidAt         DateTime?    // Ödeme yapıldıysa
 }
+```

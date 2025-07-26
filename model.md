@@ -1,3 +1,4 @@
+```
 model User {
   id                String   @id @default(cuid())
   email             String   @unique                   // Giriş için kullanılan e-posta adresi
@@ -456,3 +457,4 @@ enum CollaborationStatus {
   accepted
   rejected
 }
+```
